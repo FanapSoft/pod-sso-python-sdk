@@ -1,5 +1,4 @@
-import setuptools
-from setuptools import setup
+from setuptools import setup, find_packages
 from sso import __version__
 
 
@@ -17,14 +16,21 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords=["pod", "single sign on", "sso", "pod sdk"],
-    packages=setuptools.find_packages(exclude=("build", "dist")),
+    packages=find_packages(),
     install_requires=[
         "pod-base>=1,<2",
         "pycrypto>=2.6.1"
     ],
     classifiers=[
-        "Natural Language :: English",
         "Natural Language :: Persian",
+        "Natural Language :: English",
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7'
     ],
     python_requires='>=2.7',
     package_data={
