@@ -1,13 +1,14 @@
 from setuptools import setup, find_packages
-from sso import __version__
-
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
+version = {}
+with open("sso/version.py") as fp:
+    exec(fp.read(), version)
 
 setup(
     name="pod-sso",
-    version=__version__,
+    version=version['__version__'],
     url="https://github.com/FanapSoft/pod-sso-python-sdk",
     license="MIT",
     author="ReZa ZaRe",
