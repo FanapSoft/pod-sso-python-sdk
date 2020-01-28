@@ -17,9 +17,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords=["pod", "single sign on", "sso", "pod sdk"],
-    packages=find_packages(),
+    packages=find_packages(exclude=("examples", "tests")),
     install_requires=[
-        "pod-base>=1,<2",
+        "pod-base>=1.0.3,<2",
         "pycrypto>=2.6.1"
     ],
     classifiers=[

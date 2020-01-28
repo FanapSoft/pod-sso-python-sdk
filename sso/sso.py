@@ -58,14 +58,14 @@ class PodSSO(PodBase):
         self._client_id = client_id
         self._client_secret = client_secret
         self._redirect_url = redirect_url
-        self._services_file_path = path.join(here, "services.ini")
+        self._services_file_path = path.join(here, "services.json")
         super(PodSSO, self).__init__(api_token, token_issuer, server_type, config_path, sc_api_key, sc_voucher_hash,
                                      path.join(here, "json_schema.json"))
         self._request = Request(self.__sso_server())
         self.__private_key = False
 
     def __sso_server(self):
-        sso_server = self._get_config("sso_server")
+        sso_server = self.config.get("sso_server", self._server_type)
 
         if sso_server:
             return sso_server
